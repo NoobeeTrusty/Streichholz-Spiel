@@ -36,7 +36,7 @@ public class Spiel{
     private int berechneComputerZug() {
         int i = (int) Math.round((Math.random() * (3 - 1)) + 1);
         if(i > anzahlHölzer){
-            berechneComputerZug();
+            return berechneComputerZug();
         }
         return i;
     }

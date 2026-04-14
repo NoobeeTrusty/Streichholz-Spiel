@@ -4,12 +4,12 @@ public class Eingabe {
     public static int leseZahl() {
         Ausgabe.zahlEingeben();
         Scanner myObj = new Scanner(System.in);
-        String input = myObj.nextLine();
+        String input = myObj.next();
         try {
             Integer.parseInt(input);
         } catch (Exception e) {
             Ausgabe.keineZahl();
-            leseZahl();
+            return leseZahl();
         }
         return Integer.parseInt(input);
     }
@@ -18,7 +18,7 @@ public class Eingabe {
         int i = leseZahl();
         if(i > 4 || i < 0) {
             Ausgabe.zahlNichtImBereich();
-            leseHoelzer();
+            return leseHoelzer();
         }
         return i;
     }
